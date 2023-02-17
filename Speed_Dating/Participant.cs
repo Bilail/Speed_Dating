@@ -11,6 +11,7 @@ namespace Speed_Dating
         public int Iid { get; set; }
         public string Gender { get; set; }
         public int Race { get; set; }
+        public int Age { get; set; }
         public int Goal { get; set; }
         public int Date { get; set; }
         public int GoOut { get; set; }

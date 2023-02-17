@@ -82,6 +82,7 @@ namespace Speed_Dating
                 int ambLookingIndex = Array.IndexOf(headers, "amb4_1");
 
                 int imprIndex = Array.IndexOf(headers, "imprace");
+                int ageIndex = Array.IndexOf(headers, "age_o");
 
                 while (!reader.EndOfStream)
                 {
@@ -122,12 +123,14 @@ namespace Speed_Dating
                     var intelligenceLooking = int.TryParse(values[intelLookingIndex], out int intelLooValue) ? intelValue : -1;
                     var humourLooking = int.TryParse(values[funLookingIndex], out int funLooValue) ? funValue : -1;
                     var ambitionLooking = int.TryParse(values[ambLookingIndex], out int ambLooValue) ? ambValue : -1;
+                    var age = int.TryParse(values[ageIndex], out int agevalue) ? agevalue : -1;
 
 
                     Participant p = new Participant
                     {
                         Iid = iid,
                         Gender = gender,
+                        Age = age,
                         Race = race,
                         Goal = goal,
                         Date = date,
@@ -719,12 +722,48 @@ namespace Speed_Dating
             CriteriaInterest();
         }
 
+        private void BonusAge()
+        {
+            chart1.Series.Clear();
 
+            int[] x = new int[10];
 
+            //On créer un tableau de 18 à 18+15 ans
+            for (int i = 0; i < x.Length; i++)
+                x[i] = 19 + i;
 
-      
+            double[] y_male = new double[x.Length];
+            double[] y_female = new double[x.Length];
 
+            for (int i = 0; i < x.Length; i++)
+            {
+                y_male[i] = maleParticipants.Where(s => s.Age == 19 + i).Count();
+                y_female[i] = femaleParticipants.Where(s => s.Age == 19 + i).Count();
+            }
 
+            chart1.ChartAreas[0].AxisX.LabelStyle.Interval = 1;
+            Series male_series = new Series("male");
+            male_series.ChartType = SeriesChartType.Column;
+            male_series.IsValueShownAsLabel = true;
+            male_series.Points.DataBindXY(x, y_male);
+            chart1.Series.Add(male_series);
+
+            Series female_series = new Series("female");
+            female_series.ChartType = SeriesChartType.Column;
+            female_series.IsValueShownAsLabel = true;
+            female_series.Points.DataBindXY(x, y_female);
+            chart1.Series.Add(female_series);
+
+            // Add title to the chart
+            chart1.Titles.Clear();
+            chart1.Titles.Add("Age and Gender by Participant");
+            chart1.DataBind();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            BonusAge();
+        }
     }
 
 

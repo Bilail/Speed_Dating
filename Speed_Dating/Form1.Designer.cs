@@ -45,8 +45,9 @@
             this.button6 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button7 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -164,6 +165,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Controls.Add(this.button6);
             this.flowLayoutPanel1.Controls.Add(this.button7);
+            this.flowLayoutPanel1.Controls.Add(this.button8);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -194,6 +196,17 @@
             this.button7.Text = "Q7 : CriteriaInterest/Gender";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(6, 743);
+            this.button8.Margin = new System.Windows.Forms.Padding(6);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(336, 87);
+            this.button8.TabIndex = 12;
+            this.button8.Text = "Bonus : Age/Gender";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
@@ -230,5 +243,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button7;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button8;
     }
 }
