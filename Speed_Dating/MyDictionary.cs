@@ -31,6 +31,7 @@ namespace Speed_Dating
 
         public static Dictionary<int, string> Race = new Dictionary<int, string>
         {
+            
             {1, "Black/African American"},
             {2, "European/Caucasian-American"},
             {3, "Latino/Hispanic American"},
@@ -60,5 +61,36 @@ namespace Speed_Dating
             {7, "Almost never"}
         };
 
-}
+        public static Dictionary<int, string> Hobbies = new Dictionary<int, string>
+            {
+                { 0, "sports" },
+                { 1, "tvsports" },
+                { 2, "excersice" },
+                { 3, "dining" },
+                { 4, "museums" },
+                { 5, "art" },
+                { 6, "hiking" },
+                { 7, "gaming" },
+                { 8, "clubbing" },
+                { 9, "reading" },
+                { 10, "tv" },
+                { 11, "theater" },
+                { 12, "movies" },
+                { 13, "concerts" },
+                { 14, "music" },
+                { 15, "shopping" },
+                { 16, "yoga" }
+            };
+
+        public static Dictionary<int, string> criteria = new Dictionary<int, string>
+            {
+                { 0, "attractiveness" },
+                { 1, "sincerity" },
+                { 2, "intelligence" },
+                { 3, "humour" },
+                { 4, "ambition" },
+                //{ 5, "shared hobbies" }
+            };
+
+    }
 }

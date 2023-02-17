@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Speed_Dating
 {
-    class Participant
+    public class Participant
     {
+
+        public int Iid { get; set; }
         public string Gender { get; set; }
         public int Race { get; set; }
         public int Goal { get; set; }
@@ -29,8 +31,22 @@ namespace Speed_Dating
         public int Shopping { get; set; }
         public int Yoga { get; set; }
 
+        public int Attractiveness { get; set; }
+        public int Sincerity { get; set; }
+        public int Intelligence { get; set; }
+        public int Humour { get; set; }
+        public int Ambition { get; set; }
+        public int Imprace { get; set; }
 
-        
+        public List<int> SelfPerception { get; set; }
+        public List<int> CriteriaInterest { get; set; }
+
+        public List<int> Hobbies { get; set; }
+
+
+
+
+
 
     }
 
